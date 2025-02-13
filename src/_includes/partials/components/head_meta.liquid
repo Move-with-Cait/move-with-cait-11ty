@@ -1,0 +1,39 @@
+{% comment %} General {% endcomment %}
+{%- unless page.url == '/' -%}
+    <title>
+        {%- if title -%}{{ title }}{% else %}{{ default_meta.title }}{%- endif %}
+        •
+        {{ site.name -}}
+    </title>
+{%- else -%}
+    <title>{{ site.name }}</title>
+{%- endunless -%}
+<meta
+    name="description"
+    content="{%- if meta.description -%}{{ meta.description }}{%- else -%}{{ default_meta.description }}{%- endif -%}"
+>
+<link rel="canonical" href="{{ site.url | append: page.url }}">
+<meta name="generator" content="{{ eleventy.generator }}">
+<meta name="robots" content="index, follow">
+{% comment %} Basic OpenGraph {% endcomment %}
+<meta
+    property="og:title"
+    content="{%- if meta.og.title -%}{{ meta.og.title }}{%- else -%}{{ default_meta.og.title }}{%- endif -%}"
+>
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url | append: page.url }}">
+<meta
+    property="og:image"
+    content="{%- if meta.og.image -%}{{ meta.og.image }}{%- else -%}{{ default_meta.og.image }}{%- endif -%}"
+>
+{% comment %} Optional OpenGraph {% endcomment %}
+<meta
+    property="og:description"
+    content="{%- if meta.og.description -%}{{ meta.og.description }}{%- else -%}{{ default_meta.og.description }}{%- endif -%}"
+>
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ default_meta.og.locale }}">
+{% comment %} Favicon {% endcomment %}
+<link rel="icon" type="image/png" href="" sizes="32x32">
+<link rel="icon" type="image/png" href="" sizes="16x16">
+<link rel="shortcut icon" href="">

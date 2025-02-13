@@ -1,0 +1,25 @@
+{%- layout 'layouts/base.liquid' -%}
+
+{%- block main -%}
+<main class="page" data-layout="default">
+    <div class="content-wrapper">
+        <h1>{{ title }}</h1>
+        <img
+            src="{{ featured_image.src }}"
+            alt="{{ featured_image.alt }}"
+            eleventy:widths="450,900,1350"
+            style="width: 900px"
+        >
+        <div class="rich-text | flow">
+            {{ content }}
+        </div>
+        <div class="cluster | space-m-top">
+            <a class="button-link" href="/">Button Link Default</a>
+            <a class="button-link" href="/" data-style="primary">Button Link Primary</a>
+            <p class="tag">Tag Default</p>
+            <a href="/">Inline Link Default</a>
+            <p>Date filter: {{ '2025-02-01' | format_date }}</p>
+        </div>
+    </div>
+</main>
+{%- endblock -%}

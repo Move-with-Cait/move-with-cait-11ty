@@ -1,0 +1,19 @@
+.rich-text {
+    --flow-space: var(--space-m);
+
+    & :is(h2, h3) {
+        --flow-space: var(--space-l);
+    }
+
+    & ul {
+        list-style-type: disc;
+    }
+
+    & ol {
+        list-style-type: decimal;
+    }
+
+    & :is(ul, ol) {
+        padding-inline-start: var(--space-s);
+    }
+}

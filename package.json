@@ -1,0 +1,38 @@
+{
+    "name": "electric-eleventy",
+    "version": "1.0.0",
+    "type": "module",
+    "watch": {
+        "dev:lcss": {
+            "patterns": [
+                "src/assets/styles"
+            ],
+            "extensions": "css",
+            "quiet": true,
+            "runOnChangeOnly": false
+        }
+    },
+    "scripts": {
+        "clean": "rm -rf _site && echo 'Output cleaned.'",
+        "dev": "npm-run-all --parallel dev:* watch",
+        "dev:eleventy": "eleventy --serve",
+        "dev:lcss": "lightningcss --bundle --targets 'defaults' src/assets/styles/site.css -o _site/styles/site.min.css",
+        "watch": "npm-watch",
+        "build": "npm-run-all build:lcss build:eleventy",
+        "build:eleventy": "eleventy",
+        "build:lcss": "npm run dev:lcss -- --minify"
+    },
+    "author": "Daniel Saunders",
+    "license": "MIT",
+    "description": "Eleventy 3.0 + Lightning CSS starter repository for DS Design Studio projects.",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.0.0",
+        "@11ty/eleventy-img": "^6.0.1",
+        "@11ty/eleventy-navigation": "^0.3.5",
+        "@formkit/tempo": "^0.1.2",
+        "lightningcss-cli": "^1.29.1",
+        "npm-run-all": "^4.1.5",
+        "npm-watch": "^0.13.0",
+        "reasonable-colors": "^0.4.0"
+    }
+}

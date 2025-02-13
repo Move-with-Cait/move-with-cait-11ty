@@ -1,0 +1,43 @@
+:root {
+    /* Semantic aliases */
+    --neutral-1: var(--color-gray-1);
+    --neutral-2: var(--color-gray-2);
+    --neutral-3: var(--color-gray-3);
+    --neutral-4: var(--color-gray-4);
+    --neutral-5: var(--color-gray-5);
+    --neutral-6: var(--color-gray-6);
+
+    --primary-1: var(--color-cerulean-1);
+    --primary-2: var(--color-cerulean-2);
+    --primary-3: var(--color-cerulean-3);
+    --primary-4: var(--color-cerulean-4);
+    --primary-5: var(--color-cerulean-5);
+    --primary-6: var(--color-cerulean-6);
+
+    --site-text: var(--neutral-6);
+    --site-text--heading: var(--neutral-6);
+    --site-text--light: var(--neutral-5);
+    --site-text--reverse: white;
+    --site-text--primary: var(--primary-4);
+    --site-bg-gray: var(--neutral-2);
+    --site-border: var(--neutral-2);
+    --site-icon: var(--primary-3);
+
+    /* Other theme variables */
+    --rounded-xs: 0.25rem;
+    --rounded-sm: 0.5rem;
+    --rounded-md: 1rem;
+    --rounded-lg: 2rem;
+    --default-aspect-ratio: 3/2;
+    --shadow-none: 0px 0px 0px rgb(0 0 0 / 0);
+    --shadow-base: 0px 4px 16px rgb(0 0 0 / 0.05);
+    --shadow-large: 0px 4px 32px rgb(0 0 0 / 0.12);
+}
+
+body {
+    color: var(--site-text);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    color: var(--site-text--heading);
+}

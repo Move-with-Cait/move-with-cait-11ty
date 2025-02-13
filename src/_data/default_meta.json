@@ -1,0 +1,10 @@
+{
+    "title": "Default Title",
+    "description": "Default meta description.",
+    "og": {
+        "title": "Default OG Title",
+        "description": "Default OG description.",
+        "locale": "en_US",
+        "image": "Default OG image"
+    }
+}

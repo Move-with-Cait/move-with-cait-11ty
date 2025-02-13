@@ -1,0 +1,12 @@
+{%- layout 'layouts/base.liquid' -%}
+
+{%- block main -%}
+<main class="page" data-layout="default">
+    <div class="content-wrapper">
+        <h1>{{ title }}</h1>
+        <div class="rich-text | flow">
+            {{ content }}
+        </div>
+    </div>
+</main>
+{%- endblock -%}

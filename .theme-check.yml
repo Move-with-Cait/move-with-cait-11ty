@@ -1,0 +1,20 @@
+root: src/_includes
+
+# Disable Liquid theme checks
+UndefinedObject:
+    enabled: false
+UnknownFilter:
+    enabled: false
+MissingTemplate:
+    enabled: false
+ImgWidthAndHeight:
+    enabled: false
+AssetPreload:
+    enabled: false
+RemoteAsset:
+    enabled: false
+UnusedAssign:
+    enabled: false
+VariableName:
+    severity: info
+    format: snake_case

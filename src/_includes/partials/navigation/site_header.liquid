@@ -1,0 +1,21 @@
+<header class="site-header">
+    <div class="content-wrapper">
+        <div class="cluster">
+            <div>Site Header</div>
+            {% assign navigation = collections.page | eleventyNavigation %}
+            <ul class="cluster">
+                {%- for item in navigation -%}
+                    <li>
+                        <a
+                            aria-current="{%- if item.url == page.url -%} page {%- else -%} false {%- endif -%}"
+                            href="{{ item.url }}"
+                            class="nav-link"
+                        >
+                            {{- item.title -}}
+                        </a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,10 @@
+{
+    "cssvar.files": [
+        "src/assets/styles/base/animations.css",
+        "src/assets/styles/base/colors.css",
+        "src/assets/styles/base/layout.css",
+        "src/assets/styles/base/theme.css",
+        "src/assets/styles/base/typography.css",
+        "src/assets/styles/base/utilities.css"
+    ]
+}

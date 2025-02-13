@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% render 'partials/components/head_meta.liquid',
+            title: title,
+            meta: meta,
+            default_meta: default_meta,
+            page: page,
+            site: site,
+            eleventy: eleventy
+        %}
+        {% render 'partials/components/head_assets.liquid' %}
+    </head>
+    <body>
+        {% render 'partials/navigation/site_header.liquid', collections: collections, page: page %}
+        {% block main %}
+        {% endblock %}
+        {% render 'partials/navigation/site_footer.liquid' %}
+    </body>
+</html>
