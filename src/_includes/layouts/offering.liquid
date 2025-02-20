@@ -1,0 +1,17 @@
+{%- layout 'layouts/base.liquid' -%}
+
+{%- block main -%}
+<main class="page" data-layout="offering">
+    {% if data.pageHeader %}
+        {% render 'partials/components/page_header.liquid', header: data.pageHeader %}
+    {% endif %}
+    <div class="sections">
+        {% if data.modules.size > 0 %}
+            {% for section in data.modules %}
+                {%- capture path -%} partials/modules/{{ section._type }}.liquid {%- endcapture -%}
+                {% render path, module: section %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</main>
+{%- endblock -%}

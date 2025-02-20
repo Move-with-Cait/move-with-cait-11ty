@@ -1,0 +1,53 @@
+{%- layout 'layouts/base.liquid' -%}
+
+{%- block main -%}
+<main class="page" data-layout="events_show">
+    <div class="content-wrapper | with-sidebar | space-2xl-top section-spacing-bottom">
+        <div class="main-panel">
+            <header class="flow">
+                <a href="/events">All Events</a>
+                <h1 class="text-step-5">{{ data.title }}</h1>
+            </header>
+            {% sanity_image data.image "1200,675" "eager" true "featured-image,space-l-top" %}
+            <div class="rich-text | flow | space-xl-top">
+                {{ data.richContent.blocks | rich_text_to_html }}
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="details-wrapper | flow" data-tempo="moderato">
+                <h3 class="small-title eyebrow">Event Details</h3>
+                <div class="details">
+                    <div>
+                        <p class="price">
+                            $
+                            {{- data.details.price -}}
+                        </p>
+                        {%- if data.details.priceDescription -%}
+                            <p>{{ data.details.priceDescription }}</p>
+                        {%- endif -%}
+                    </div>
+                    <dl>
+                        <dt>
+                            <strong>
+                                {%- if data.details.endDate -%}Dates {%- else -%}Date{%- endif -%}
+                            </strong>
+                        </dt>
+                        <dd>{{ data.details | format_date_range }}</dd>
+                        <dt><strong>Time</strong></dt>
+                        <dd>{{ data.details.meetingTime }}</dd>
+                        <dt><strong>Location</strong></dt>
+                        <dd>{{ data.details.meetingPlace }}</dd>
+                    </dl>
+                </div>
+                {% if data.link.size > 0 %}
+                    {% assign link = data.link[0] %}
+                    {% sanity_link link "button-link" "data-style='primary'" %}
+                {% endif %}
+                {% if data.enrolling %}
+                    <div class="tag">Now Enrolling!</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+{%- endblock -%}

@@ -1,0 +1,32 @@
+[data-module="callout"] {
+    --wrapper-max-width: 50rem;
+    position: relative;
+
+    & .frame {
+        --frame-aspect-ratio: 1;
+        border-radius: 999px;
+        width: 8rem;
+        height: 8rem;
+    }
+
+    & .eyebrow {
+        color: var(--primary-500);
+
+        & + .tagline {
+            margin-block-start: var(--space-2xs);
+        }
+    }
+
+    & .tagline {
+        font-size: var(--step-5);
+        color: inherit;
+    }
+
+    & .stitch-wave {
+        position: absolute;
+        top: -14rem;
+        left: 0;
+        z-index: -1;
+        opacity: 0.15;
+    }
+}

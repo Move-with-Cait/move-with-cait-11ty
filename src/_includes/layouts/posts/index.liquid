@@ -4,25 +4,24 @@
 <main class="page" data-layout="posts_index">
     <div class="content-wrapper">
         <h1>{{ title }}</h1>
-        <div class="rich-text">
-            {{ content }}
-        </div>
-        <h2>Past Dates</h2>
-        {% assign past_dates = collections.post | past_dates %}
-        {% for post in past_dates %}
-            <article>
-                <div>{{ post.data.title }}</div>
-                <p>{{ post.data.date | format_date }}</p>
-            </article>
-        {% endfor %}
-        <h2>Upcoming Dates</h2>
-        {% assign upcoming_dates = collections.post | upcoming_dates %}
-        {% for post in upcoming_dates %}
-            <article>
-                <div>{{ post.data.title }}</div>
-                <p>{{ post.data.date | format_date }}</p>
-            </article>
-        {% endfor %}
+        {% comment %}
+            <h2>Past Dates</h2>
+            {% assign past_dates = collections.post | past_dates %}
+            {% for post in past_dates %}
+                <article>
+                    <div>{{ post.data.title }}</div>
+                    <p>{{ post.data.date | format_date }}</p>
+                </article>
+            {% endfor %}
+            <h2>Upcoming Dates</h2>
+            {% assign upcoming_dates = collections.post | upcoming_dates %}
+            {% for post in upcoming_dates %}
+                <article>
+                    <div>{{ post.data.title }}</div>
+                    <p>{{ post.data.date | format_date }}</p>
+                </article>
+            {% endfor %}
+        {% endcomment %}
     </div>
 </main>
 {%- endblock -%}

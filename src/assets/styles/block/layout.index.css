@@ -1,0 +1,11 @@
+.page[data-layout="index"] {
+    & .items {
+        & > * + * {
+            margin-block-start: var(--space-l);
+        }
+    }
+}
+
+/* .page.events[data-layout="index"] {
+    
+} */

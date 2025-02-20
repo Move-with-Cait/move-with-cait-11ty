@@ -3,13 +3,15 @@
     align-items: center;
     gap: var(--button-gap, 0.5em);
     font-size: var(--step-0);
-    padding-block: 0.35rem; /* 0.25rem */
-    padding-inline: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: var(--leading-tight);
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
     text-decoration: none;
-    border-radius: var(--rounded-xs);
-    font-weight: 700;
+    border-radius: 1rem var(--rounded-xs);
     color: var(--button-text, inherit);
-    background-color: var(--button-bg, var(--neutral-2));
+    background-color: var(--button-bg, var(--neutral-100));
     border: 1px solid var(--button-border, var(--site-border));
     transition: all 0.2s;
 
@@ -20,11 +22,9 @@
 
     &:hover {
         color: var(--button-text--hover, var(--button-text));
-        background-color: var(
-            --button-bg--hover,
-            color-mix(in srgb, var(--neutral-2) 75%, var(--neutral-3))
-        );
+        background-color: var(--button-bg--hover, var(--neutral-200));
         border-color: var(--button-border--hover, var(--site-border));
+        border-radius: var(--rounded-xs);
     }
 
     /* Sizes */
@@ -34,11 +34,29 @@
 
     /* Styles */
     &[data-style="primary"] {
-        --button-text: var(--primary-1);
-        --button-text--hover: var(--button-text);
-        --button-bg: var(--primary-4);
-        --button-bg--hover: var(--primary-5);
-        --button-border: var(--primary-3);
+        --button-text: var(--primary-100);
+        --button-text--hover: white;
+        --button-bg: var(--neutral-900);
+        --button-bg--hover: var(--primary-700);
+        --button-border: transparent;
         --button-border--hover: var(--button-border);
+    }
+
+    &[data-style="ghost-primary"] {
+        --button-text: var(--primary-100);
+        --button-text--hover: var(--primary-600);
+        --button-bg: transparent;
+        --button-bg--hover: var(--primary-100);
+        --button-border: var(--primary-100);
+        --button-border--hover: var(--button-border);
+    }
+
+    &[data-style="white"] {
+        --button-text: var(--primary-700);
+        --button-text--hover: white;
+        --button-bg: white;
+        --button-bg--hover: transparent;
+        --button-border: transparent;
+        --button-border--hover: white;
     }
 }

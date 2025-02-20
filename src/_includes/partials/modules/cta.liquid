@@ -1,0 +1,11 @@
+<section class="with-bg-image" data-module="cta">
+    <div class="content-wrapper">
+        <div class="text | text-center | flow" data-tempo="moderato">
+            <h2 class="text-white lowercase">{{ module.heading }}</h2>
+            <p>{{ module.text }}</p>
+            {% assign link = module.link[0] %}
+            {% sanity_link link "button-link" "data-style='ghost-primary'" %}
+        </div>
+    </div>
+    {% sanity_image module.image "1200,675" "lazy" true "bg-image" %}
+</section>

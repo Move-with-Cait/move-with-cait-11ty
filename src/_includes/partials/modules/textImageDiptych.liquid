@@ -1,0 +1,19 @@
+<div
+    class="panes"
+    data-module="textImageDiptych"
+    data-composition="diptych"
+    data-offset="right"
+    data-layout="{%- if image_position == "right" -%} flipped {%- endif -%}"
+>
+    <div class="frame">
+        {% sanity_image module.image "1000,1142" %}
+    </div>
+    <div class="text | flow" data-tempo="moderato">
+        <h3 class="lowercase">{{ module.heading }}</h3>
+        <div class="rich-text flow">{{ module.preview | rich_text_to_html }}</div>
+        {% if module.cta.size > 0 %}
+            {% assign cta_link = module.cta[0] %}
+            {% sanity_link cta_link "button-link" "data-style='primary'" %}
+        {% endif %}
+    </div>
+</div>

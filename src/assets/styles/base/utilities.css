@@ -35,8 +35,16 @@
     font-size: var(--step-6);
 }
 
+.text-step-7 {
+    font-size: var(--step-7);
+}
+
 .text-center {
     text-align: center;
+}
+
+.lowercase {
+    text-transform: lowercase;
 }
 
 /* Spacing */
@@ -64,6 +72,14 @@
     padding-block-end: var(--section-spacing);
 }
 
+.space-2xs-top {
+    margin-block-start: var(--space-2xs);
+}
+
+.space-xs-top {
+    margin-block-start: var(--space-xs);
+}
+
 .space-s-top {
     margin-block-start: var(--space-s);
 }
@@ -80,9 +96,19 @@
     margin-block-start: var(--space-xl);
 }
 
+.space-2xl-top {
+    margin-block-start: var(--space-2xl);
+}
+
 /* Position */
 .relative {
     position: relative;
+}
+
+.center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Colors */
@@ -92,4 +118,11 @@
 
 .bg-gray {
     background-color: var(--site-bg-gray);
+}
+
+/* Images */
+.with-lqip {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -1,0 +1,13 @@
+<div>
+    {% if collections.other_enrolling_events.size > 0 %}
+        <div class="enrolling-events flex-items | space-xl-top">
+            {% for item in collections.other_enrolling_events %}
+                {% assign event = item.data.data %}
+                {% render 'partials/components/event.card.liquid', event: event %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="center-all | space-xl-top">
+        <a class="button-link" data-style="primary" href="/events">See All Events</a>
+    </div>
+</div>

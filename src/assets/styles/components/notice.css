@@ -1,0 +1,10 @@
+.notice {
+    background-color: var(--primary-50);
+    border: 1px solid var(--primary-100);
+    padding: var(--space-m);
+    border-radius: var(--rounded-xs);
+    color: var(--primary-600);
+    max-width: 35rem;
+    margin-inline: auto;
+    text-align: center;
+}

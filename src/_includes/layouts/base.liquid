@@ -4,19 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% render 'partials/components/head_meta.liquid',
-            title: title,
-            meta: meta,
-            default_meta: default_meta,
+            data: data,
+            site_settings: sanity.site_settings,
             page: page,
-            site: site,
             eleventy: eleventy
         %}
         {% render 'partials/components/head_assets.liquid' %}
     </head>
     <body>
-        {% render 'partials/navigation/site_header.liquid', collections: collections, page: page %}
+        {% assign main_navigation = sanity.navigation | find: '_id', 'c48b6507-76a2-4950-b575-59d1dcd13d4b' %}
+        {% assign footer_navigation = sanity.navigation | find: '_id', 'feb60ba7-6dcb-4d65-b1b4-66fc3a96a382' %}
+        {% render 'partials/navigation/site_header.liquid',
+            navigation: main_navigation,
+            collections: collections,
+            page: page
+        %}
         {% block main %}
         {% endblock %}
-        {% render 'partials/navigation/site_footer.liquid' %}
+        {% render 'partials/navigation/site_footer.liquid', navigation: footer_navigation %}
     </body>
 </html>

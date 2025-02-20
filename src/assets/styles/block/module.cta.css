@@ -1,0 +1,9 @@
+[data-module="cta"] {
+    padding-block: calc(var(--section-spacing) * 2);
+    color: white;
+
+    & .text {
+        max-width: 45rem;
+        margin-inline: auto;
+    }
+}

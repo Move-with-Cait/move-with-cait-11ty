@@ -1,6 +1,41 @@
 <footer class="site-footer">
     <div class="content-wrapper">
-        <div>Site Footer</div>
-        <div>© {% current_year %}</div>
+        <div class="grid">
+            <div class="logo-wrapper">
+                <a class="logo" href="/">move with cait</a>
+                <a href="mailto:hi.movewithcait@gmail.com" target="_blank"> hi.movewithcait@gmail.com </a>
+                <a href="https://www.instagram.com/move_withcait" target="_blank"> @move_withcait </a>
+                <img src="/svg/chain-stitch-loop-dark.svg" width="300" alt="">
+            </div>
+            {% for item in navigation.items %}
+                {% if item._type == 'linkList' %}
+                    <div class="column">
+                        <div class="column-title">{{ item.label }}</div>
+                        <ul class="flow" data-tempo="allegro">
+                            {% for child_item in item.links %}
+                                <li>
+                                    {% sanity_link child_item "footer-link" %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <a
+                title="TCTSY Certified Facilitator"
+                href="https://www.traumasensitiveyoga.com/"
+                class="external-link"
+                target="_blank"
+            >
+                <img src="/logos/tctsy-certified.png" width="200" height="200" alt="TCTSY Certified Facilitator">
+            </a>
+        </div>
+        <div class="subfooter | cluster">
+            <div>© {% current_year %} Move with Cait | Pasadena & Los Angeles, CA</div>
+            <div>
+                Designed by
+                <a class="footer-link" href="https://www.ds-design-studio.com" target="_blank">DS Design Studio</a>
+            </div>
+        </div>
     </div>
 </footer>

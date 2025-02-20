@@ -1,27 +1,31 @@
 :root {
-    /* Semantic aliases */
-    --neutral-1: var(--color-gray-1);
-    --neutral-2: var(--color-gray-2);
-    --neutral-3: var(--color-gray-3);
-    --neutral-4: var(--color-gray-4);
-    --neutral-5: var(--color-gray-5);
-    --neutral-6: var(--color-gray-6);
+    --white: #fff;
+    --primary-50: oklch(97.3% 0.01 199.63);
+    --primary-100: oklch(91.3% 0.028 199.63);
+    --primary-200: oklch(85.9% 0.054 199.63);
+    --primary-400: oklch(67.8% 0.079 199.63);
+    --primary-500: oklch(53.2% 0.079 199.63);
+    --primary-600: oklch(43.2% 0.079 199.63);
+    --primary-700: oklch(37.4% 0.079 199.63);
+    --primary-800: oklch(27.4% 0.085 199.63);
+    --accent-1-400: oklch(66.1% 0.09 75.39);
+    --accent-2-400: oklch(62.1% 0.123 18);
+    --neutral-100: oklch(96.5% 0.005 200.14);
+    --neutral-200: oklch(86.8% 0.005 200.14);
+    --neutral-500: oklch(53.8% 0.005 200.14);
+    --neutral-700: oklch(23.8% 0.005 200.14);
+    --neutral-800: oklch(20.3% 0.005 200.14);
+    --neutral-900: oklch(17.6% 0.005 200.14);
 
-    --primary-1: var(--color-cerulean-1);
-    --primary-2: var(--color-cerulean-2);
-    --primary-3: var(--color-cerulean-3);
-    --primary-4: var(--color-cerulean-4);
-    --primary-5: var(--color-cerulean-5);
-    --primary-6: var(--color-cerulean-6);
-
-    --site-text: var(--neutral-6);
-    --site-text--heading: var(--neutral-6);
-    --site-text--light: var(--neutral-5);
-    --site-text--reverse: white;
-    --site-text--primary: var(--primary-4);
-    --site-bg-gray: var(--neutral-2);
-    --site-border: var(--neutral-2);
-    --site-icon: var(--primary-3);
+    --site-text: var(--neutral-700);
+    --site-text--heading: var(--neutral-900);
+    /* --site-text--light: var(--neutral-5); */
+    /* --site-text--reverse: white; */
+    --site-text--primary: var(--primary-600);
+    --site-text--primary-light: var(--primary-400);
+    /* --site-bg-gray: var(--neutral-2); */
+    --site-border: var(--neutral-200);
+    /* --site-icon: var(--primary-3); */
 
     /* Other theme variables */
     --rounded-xs: 0.25rem;

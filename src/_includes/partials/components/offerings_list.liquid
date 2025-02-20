@@ -1,0 +1,15 @@
+<div class="fluid-grid | space-xl-top" data-layout="halves">
+    {% for item in collections.offerings %}
+        {% assign offering = item.data.data %}
+        <article class="offering-preview">
+            <a href="{{ offering.slug }}">
+                <div class="text | flow" data-tempo="allegro">
+                    <h3>{{ offering.title }}</h3>
+                    {{- offering.pageHeader.tagline | rich_text_to_html -}}
+                    <p class="faux-link">Learn More</p>
+                </div>
+            </a>
+            {% sanity_image offering.pageHeader.image "800,600" "lazy" true "bg-image" %}
+        </article>
+    {% endfor %}
+</div>

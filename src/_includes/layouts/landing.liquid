@@ -1,0 +1,41 @@
+{%- layout 'layouts/base.liquid' -%}
+
+{%- block main -%}
+<main class="page" data-layout="landing">
+    <div class="landing-header">
+        <div class="content-wrapper">
+            <div class="panes" data-composition="diptych" data-offset="left">
+                <div class="flow" data-tempo="andante">
+                    <header>
+                        <h1 class="eyebrow | small-title">{{ data.pageHeader.eyebrow }}</h1>
+                        <div class="tagline | space-xs-top">
+                            {{- data.pageHeader.tagline | rich_text_to_html -}}
+                        </div>
+                    </header>
+                    {% if data.pageHeader.preview %}
+                        <div class="preview">
+                            {{- data.pageHeader.preview | rich_text_to_html -}}
+                        </div>
+                    {% endif %}
+                    {% if data.pageHeader.cta.size > 0 %}
+                        {% assign cta_link = data.pageHeader.cta[0] %}
+                        {% sanity_link cta_link "button-link" "data-style='white'" %}
+                    {% endif %}
+                </div>
+                <div class="frame">
+                    {% sanity_image data.pageHeader.image "1000,1142" "eager" true %}
+                </div>
+            </div>
+        </div>
+        {% render 'partials/svg/header_wave.liquid' %}
+    </div>
+    <div class="sections">
+        {% if data.modules.size > 0 %}
+            {% for section in data.modules %}
+                {%- capture path -%} partials/modules/{{ section._type }}.liquid {%- endcapture -%}
+                {% render path, module: section %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

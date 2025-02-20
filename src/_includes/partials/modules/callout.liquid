@@ -1,0 +1,23 @@
+<section data-module="callout">
+    <div class="content-wrapper">
+        <div class="flow | text-center" data-tempo="moderato">
+            <div class="center-all">
+                <div class="frame">
+                    {% sanity_image module.image "600,600" %}
+                </div>
+            </div>
+            <header>
+                {% if module.eyebrow %}
+                    <h2 class="small-title eyebrow">{{ module.eyebrow }}</h2>
+                {% endif %}
+                <div class="tagline">{{- module.tagline | rich_text_to_html -}}</div>
+            </header>
+            <div>{{ module.preview | rich_text_to_html }}</div>
+            {% if module.cta.size > 0 %}
+                {% assign cta_link = module.cta[0] %}
+                {% sanity_link cta_link "button-link" "data-style='primary'" %}
+            {% endif %}
+        </div>
+    </div>
+    <img class="stitch-wave" src="/svg/stitch-wave-light.svg" width="1920" height="651" alt="">
+</section>

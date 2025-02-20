@@ -1,3 +1,16 @@
 .site-header {
-    padding-block: var(--space-m);
+    padding-block: var(--space-l);
+    padding-inline: var(--space-2xl);
+
+    & > .cluster {
+        --cluster-justify: space-between;
+    }
+
+    & nav {
+        & ul:not(.popover-panel) {
+            display: flex;
+            align-items: center;
+            gap: var(--space-m);
+        }
+    }
 }

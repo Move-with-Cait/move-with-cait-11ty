@@ -13,14 +13,39 @@
 
 /*** Main */
 /* Components */
+@import "components/bg-image.css" layer(main);
 @import "components/button-link.css" layer(main);
 @import "components/nav-link.css" layer(main);
+@import "components/footer-link.css" layer(main);
+@import "components/notice.css" layer(main);
+@import "components/offering-preview.css" layer(main);
+@import "components/popover.css" layer(main);
+@import "components/rays-heading.css" layer(main);
 @import "components/tag.css" layer(main);
+@import "components/tagline.css" layer(main);
+@import "components/toc.css" layer(main);
+@import "components/wave.css" layer(main);
 /* Navigation */
 @import "navigation/site-header.css" layer(main);
 @import "navigation/site-footer.css" layer(main);
 /* Block */
 @import "block/rich-text.css" layer(main);
+@import "block/page-header.css" layer(main);
+@import "block/module.presentationSection.css" layer(main);
+@import "block/module.textImageDiptych.css" layer(main);
+@import "block/module.callout.css" layer(main);
+@import "block/module.cta.css" layer(main);
+@import "block/module.richContent.css" layer(main);
+/* @import "block/layout.offering.css" layer(main); */
+@import "block/layout.show.css" layer(main);
+@import "block/layout.index.css" layer(main);
+@import "block/layout.landing.css" layer(main);
+@import "block/layout.home.css" layer(main);
+@import "block/page.css" layer(main);
+@import "block/event.css" layer(main);
+@import "block/rich-text.pricing-blocks.css" layer(main);
+@import "block/rich-text.highlight-blocks.css" layer(main);
+@import "block/rich-text.logo-cloud.css" layer(main);
 /* Block styles here */
 /*** Utilities */
 @import "base/utilities.css" layer(utilities);

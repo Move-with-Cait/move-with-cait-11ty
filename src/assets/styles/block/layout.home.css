@@ -1,0 +1,50 @@
+.page[data-layout="home"] {
+    & .home-header {
+        position: relative;
+
+        & .frame {
+            --frame-aspect-ratio: 7/8;
+            position: relative;
+            overflow: visible;
+
+            & img {
+                position: absolute;
+                border-radius: 3rem var(--rounded-xs);
+                top: 4rem;
+            }
+        }
+
+        & .panes {
+            --panes-gap: var(--space-2xl);
+        }
+
+        & .tagline {
+            text-align: center;
+            color: inherit;
+
+            & :is(span, em) {
+                color: var(--primary-500);
+            }
+        }
+
+        & .preview {
+            font-size: var(--step-2);
+        }
+
+        & .wave {
+            transform: rotate(-180deg);
+            bottom: -1px;
+            z-index: -1;
+        }
+    }
+
+    & [data-module="presentationSection"] {
+        background-color: var(--primary-700);
+        color: var(--primary-200);
+        padding-block-start: calc(var(--space-3xl) * 1.75);
+
+        & :is(h2, h3) {
+            color: white;
+        }
+    }
+}

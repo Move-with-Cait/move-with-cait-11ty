@@ -3,21 +3,21 @@
     align-items: center;
     gap: var(--nav-link-gap, 0.5em);
     text-decoration: none;
+    color: inherit;
     padding-block: 0.25rem;
     padding-inline: 0.5rem;
     border-radius: var(--rounded-xs);
-    font-weight: 700;
     transition: all 0.2s;
 
     &:hover {
-        color: var(--site-text--primary);
-        background-color: var(--primary-1);
+        color: var(--site-text--primary-light);
     }
 
     & svg {
         position: relative;
         height: 0.75em;
         top: -1px;
+        fill: currentColor;
     }
 
     &[aria-current="page"] {

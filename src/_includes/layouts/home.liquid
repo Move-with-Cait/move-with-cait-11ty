@@ -1,25 +1,41 @@
 {%- layout 'layouts/base.liquid' -%}
 
 {%- block main -%}
-<main class="page" data-layout="default">
-    <div class="content-wrapper">
-        <h1>{{ title }}</h1>
-        <img
-            src="{{ featured_image.src }}"
-            alt="{{ featured_image.alt }}"
-            eleventy:widths="450,900,1350"
-            style="width: 900px"
-        >
-        <div class="rich-text | flow">
-            {{ content }}
+<main class="page {{ data.title | slugify }}" data-layout="home">
+    <div class="home-header">
+        <div class="content-wrapper">
+            <header>
+                <h1 class="tagline | text-step-7 | space-xl-top">
+                    Cultivating <em>curiosity</em> and <em>care</em> through movement
+                    {% comment %} {{- data.pageHeader.tagline | rich_text_to_html -}} {% endcomment %}
+                </h1>
+            </header>
+            <div class="panes" data-composition="diptych" data-offset="left">
+                <div class="text | flow" data-tempo="moderato">
+                    {% if data.pageHeader.preview %}
+                        <div class="preview">
+                            {{- data.pageHeader.preview | rich_text_to_html -}}
+                        </div>
+                    {% endif %}
+                    {% if data.pageHeader.cta.size > 0 %}
+                        {% assign cta_link = data.pageHeader.cta[0] %}
+                        {% sanity_link cta_link "button-link" "data-style='primary'" %}
+                    {% endif %}
+                </div>
+                <div class="frame">
+                    {% sanity_image data.pageHeader.image "1000,1142" "eager" true %}
+                </div>
+            </div>
         </div>
-        <div class="cluster | space-m-top">
-            <a class="button-link" href="/">Button Link Default</a>
-            <a class="button-link" href="/" data-style="primary">Button Link Primary</a>
-            <p class="tag">Tag Default</p>
-            <a href="/">Inline Link Default</a>
-            <p>Date filter: {{ '2025-02-01' | format_date }}</p>
-        </div>
+        {% render 'partials/svg/header_wave.liquid' %}
+    </div>
+    <div class="sections">
+        {% if data.modules.size > 0 %}
+            {% for section in data.modules %}
+                {%- capture path -%} partials/modules/{{ section._type }}.liquid {%- endcapture -%}
+                {% render path, module: section, collections: collections %}
+            {% endfor %}
+        {% endif %}
     </div>
 </main>
 {%- endblock -%}

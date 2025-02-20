@@ -1,0 +1,42 @@
+<div class="section-spacing">
+    <div class="current-events | content-wrapper">
+        <h2 class="visually-hidden">Upcoming Events</h2>
+        {% if collections.upcoming_events.size > 0 %}
+            <div class="items">
+                {% for item in collections.upcoming_events %}
+                    {% assign event = item.data.data %}
+                    {% render 'partials/components/event.featured.liquid', event: event %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="content-wrapper">
+                <div class="notice">
+                    <p><em>No upcoming events scheduled at this time.</em></p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {% if collections.other_enrolling_events.size > 0 %}
+        <div class="content-wrapper | section-spacing-top">
+            {% render 'partials/components/rays_heading.liquid',
+                level: '2',
+                heading: 'Other Currently Enrolling Events'
+            %}
+            <div class="enrolling-events flex-items | space-xl-top">
+                {% for item in collections.other_enrolling_events %}
+                    {% assign event = item.data.data %}
+                    {% render 'partials/components/event.card.liquid', event: event %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="content-wrapper | section-spacing-top">
+        {% render 'partials/components/rays_heading.liquid', level: '2', heading: 'Past Events' %}
+        <div class="items | space-xl-top">
+            {% for item in collections.past_events %}
+                {% assign event = item.data.data %}
+                {% render 'partials/components/event.featured.liquid', event: event %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

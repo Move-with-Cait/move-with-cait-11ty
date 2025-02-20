@@ -1,0 +1,22 @@
+<div class="page-header">
+    <div class="relative">
+        <header>
+            <div class="content-wrapper | text-center">
+                <h1 class="eyebrow | small-title">{{ header.eyebrow }}</h1>
+                {% if header.tagline %}
+                    <div class="tagline | space-xs-top">
+                        {{- header.tagline | rich_text_to_html -}}
+                    </div>
+                {% endif %}
+            </div>
+        </header>
+        {% render 'partials/svg/header_wave.liquid' %}
+    </div>
+    {% if header.image %}
+        <div class="content-wrapper">
+            <div class="frame" data-aspect-ratio="16/9">
+                {% sanity_image header.image "1200,675" "eager" true %}
+            </div>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,13 @@
+.logo-cloud {
+    justify-items: center;
+    align-items: center;
+    max-width: 1024px;
+    margin-inline: auto;
+
+    & img {
+        margin-block: 0;
+        border-radius: 0;
+        max-height: 120px;
+        object-fit: contain;
+    }
+}

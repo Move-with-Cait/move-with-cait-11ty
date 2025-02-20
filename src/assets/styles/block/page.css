@@ -1,0 +1,28 @@
+/* Styles for Resources, About, and offerings pages */
+.page:is(
+        [data-page-id="7fd6b10f-e984-43b0-9ac7-1b430483585e"],
+        [data-page-id="eee8314b-380d-42f1-bde1-6668a0f8c3ed"],
+        [data-layout="offering"]
+    ) {
+    & .rich-text {
+        & > :is(h2, h3, p, ul, ol, img, .toc) {
+            max-width: var(--rich-text-slim);
+            margin-inline: auto;
+        }
+    }
+
+    & .sections:not(:has([data-module="cta"])) {
+        margin-block-end: var(--section-spacing);
+    }
+
+    & .sections > :first-child {
+        margin-block-start: var(--space-xl);
+    }
+}
+
+/* Remove first child margin on About page */
+.page[data-page-id="eee8314b-380d-42f1-bde1-6668a0f8c3ed"] {
+    & .sections > :first-child {
+        margin-block-start: 0;
+    }
+}

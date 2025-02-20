@@ -1,12 +1,17 @@
 {%- layout 'layouts/base.liquid' -%}
 
 {%- block main -%}
-<main class="page" data-layout="default">
-    <div class="content-wrapper">
-        <h1>{{ title }}</h1>
-        <div class="rich-text | flow">
-            {{ content }}
-        </div>
+<main class="page {{ data.title | slugify }}" data-layout="default" data-page-id="{{ data._id }}">
+    {% if data.pageHeader %}
+        {% render 'partials/components/page_header.liquid', header: data.pageHeader %}
+    {% endif %}
+    <div class="sections">
+        {% if data.modules.size > 0 %}
+            {% for section in data.modules %}
+                {%- capture path -%} partials/modules/{{ section._type }}.liquid {%- endcapture -%}
+                {% render path, module: section %}
+            {% endfor %}
+        {% endif %}
     </div>
 </main>
 {%- endblock -%}

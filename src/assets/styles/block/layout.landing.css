@@ -1,0 +1,38 @@
+.page[data-layout="landing"] {
+    & .landing-header {
+        position: relative;
+        background-color: var(--primary-700);
+
+        & header {
+            margin-block-start: var(--section-spacing);
+        }
+
+        & .panes {
+            --panes-gap: var(--space-3xl);
+            position: relative;
+            z-index: 2;
+        }
+
+        & .preview {
+            color: var(--primary-200);
+        }
+
+        & .frame {
+            --frame-aspect-ratio: 7/8;
+            position: relative;
+            overflow: visible;
+
+            & img {
+                position: absolute;
+                border-radius: 3rem var(--rounded-xs);
+                top: 4rem;
+            }
+        }
+    }
+
+    & .sections > :first-child {
+        position: relative;
+        z-index: 2;
+        margin-block-start: 14rem;
+    }
+}

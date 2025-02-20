@@ -1,58 +1,63 @@
 :root {
-    --font-primary: "Public Sans", system-ui, sans-serif;
-    --font-heading: var(--font-primary);
-    --font-heading-weight: 800;
-    --leading-normal: 1.6;
+    --font-primary: brevia, system-ui, sans-serif;
+    --font-heading: gelica, system-ui, sans-serif;
+    --font-heading-weight: 200;
+    --font-medium-weight: 600;
+    --leading-normal: 1.5;
     --leading-tight: 1.15;
+    --rich-text-slim: 750px;
 
     /* Fluid type scale */
-    /* @link https://utopia.fyi/type/calculator?c=320,15,1.2,1240,16,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-    --step--2: clamp(0.64rem, 0.6549rem + -0.0192vw, 0.651rem);
-    --step--1: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
-    --step-0: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
-    --step-1: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-    --step-2: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
-    --step-3: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
-    --step-4: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
-    --step-5: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
-    --step-6: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
-    --step-7: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+    /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1240,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    /* @link https://utopia.fyi/type/calculator?c=320,13,1.25,1240,14,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    --step--2: clamp(0.52rem, calc(0.51rem + 0.07vw), 0.56rem);
+    --step--1: clamp(0.65rem, calc(0.63rem + 0.09vw), 0.7rem);
+    --step-0: clamp(0.81rem, calc(0.79rem + 0.11vw), 0.88rem);
+    --step-1: clamp(1.02rem, calc(0.99rem + 0.14vw), 1.09rem);
+    --step-2: clamp(1.27rem, calc(1.24rem + 0.17vw), 1.37rem);
+    --step-3: clamp(1.59rem, calc(1.54rem + 0.21vw), 1.71rem);
+    --step-4: clamp(1.98rem, calc(1.93rem + 0.27vw), 2.14rem);
+    --step-5: clamp(2.48rem, calc(2.41rem + 0.33vw), 2.67rem);
+    --step-6: clamp(3.1rem, calc(3.02rem + 0.42vw), 3.34rem);
+    --step-7: clamp(3.87rem, calc(3.77rem + 0.52vw), 4.17rem);
 
     /* Fluid space scale */
-    /* @link https://utopia.fyi/space/calculator?c=320,15,1.2,1240,16,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l|m-xl&g=s,l,xl,12 */
-    --space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
-    --space-2xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
-    --space-xs: clamp(0.6875rem, 0.6658rem + 0.1087vw, 0.75rem);
-    --space-s: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
-    --space-m: clamp(1.4375rem, 1.4158rem + 0.1087vw, 1.5rem);
-    --space-l: clamp(1.875rem, 1.8315rem + 0.2174vw, 2rem);
-    --space-xl: clamp(2.8125rem, 2.7473rem + 0.3261vw, 3rem);
-    --space-2xl: clamp(3.75rem, 3.663rem + 0.4348vw, 4rem);
-    --space-3xl: clamp(5.625rem, 5.4946rem + 0.6522vw, 6rem);
+    /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1240,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l|s-m&g=s,l,xl,12 */
+    /* @link https://utopia.fyi/space/calculator?c=320,13,1.25,1240,14,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l|s-m&g=s,l,xl,12 */
+    --space-3xs: clamp(0.19rem, calc(0.17rem + 0.11vw), 0.25rem);
+    --space-2xs: clamp(0.44rem, calc(0.44rem + 0vw), 0.44rem);
+    --space-xs: clamp(0.63rem, calc(0.6rem + 0.11vw), 0.69rem);
+    --space-s: clamp(0.81rem, calc(0.79rem + 0.11vw), 0.88rem);
+    --space-m: clamp(1.25rem, calc(1.23rem + 0.11vw), 1.31rem);
+    --space-l: clamp(1.63rem, calc(1.58rem + 0.22vw), 1.75rem);
+    --space-xl: clamp(2.44rem, calc(2.37rem + 0.33vw), 2.63rem);
+    --space-2xl: clamp(3.25rem, calc(3.16rem + 0.43vw), 3.5rem);
+    --space-3xl: clamp(4.88rem, calc(4.74rem + 0.65vw), 5.25rem);
 
     /* One-up pairs */
-    --space-3xs-2xs: clamp(0.25rem, 0.163rem + 0.4348vw, 0.5rem);
-    --space-2xs-xs: clamp(0.5rem, 0.413rem + 0.4348vw, 0.75rem);
-    --space-xs-s: clamp(0.6875rem, 0.5788rem + 0.5435vw, 1rem);
-    --space-s-m: clamp(0.9375rem, 0.7418rem + 0.9783vw, 1.5rem);
-    --space-m-l: clamp(1.4375rem, 1.2418rem + 0.9783vw, 2rem);
-    --space-l-xl: clamp(1.875rem, 1.4837rem + 1.9565vw, 3rem);
-    --space-xl-2xl: clamp(2.8125rem, 2.3995rem + 2.0652vw, 4rem);
-    --space-2xl-3xl: clamp(3.75rem, 2.9674rem + 3.913vw, 6rem);
+    --space-3xs-2xs: clamp(0.19rem, calc(0.1rem + 0.43vw), 0.44rem);
+    --space-2xs-xs: clamp(0.44rem, calc(0.35rem + 0.43vw), 0.69rem);
+    --space-xs-s: clamp(0.63rem, calc(0.54rem + 0.43vw), 0.88rem);
+    --space-s-m: clamp(0.81rem, calc(0.64rem + 0.87vw), 1.31rem);
+    --space-m-l: clamp(1.25rem, calc(1.08rem + 0.87vw), 1.75rem);
+    --space-l-xl: clamp(1.63rem, calc(1.28rem + 1.74vw), 2.63rem);
+    --space-xl-2xl: clamp(2.44rem, calc(2.07rem + 1.85vw), 3.5rem);
+    --space-2xl-3xl: clamp(3.25rem, calc(2.55rem + 3.48vw), 5.25rem);
 
     /* Custom pairs */
-    --space-s-l: clamp(0.9375rem, 0.5679rem + 1.8478vw, 2rem);
-    --space-m-xl: clamp(1.4375rem, 0.894rem + 2.7174vw, 3rem);
+    --space-s-l: clamp(0.81rem, calc(0.49rem + 1.63vw), 1.75rem);
+    --space-s-m: clamp(0.81rem, calc(0.64rem + 0.87vw), 1.31rem);
 }
 
 body {
     font-family: var(--font-primary);
-    font-size: var(--step-0);
+    font-size: var(--step-1);
     line-height: var(--leading-normal);
 }
 
 :is(h1, h2, h3, h4, h5) {
     font-family: var(--font-heading);
+    line-height: var(--leading-tight);
     font-weight: var(--font-heading-weight);
 }
 
@@ -61,39 +66,40 @@ body {
 }
 
 h1 {
-    font-size: var(--step-5);
+    font-size: var(--step-6);
 }
 
 h2 {
-    font-size: var(--step-4);
+    font-size: var(--step-5);
 }
 
 h3 {
-    font-size: var(--step-3);
+    font-size: var(--step-4);
 }
 
 h4 {
-    font-size: var(--step-2);
+    font-size: var(--step-3);
 }
 
 a:not([class]) {
     color: var(--site-text--primary);
-    text-decoration: underline;
+    text-decoration: underline var(--site-text--primary-light) 2px;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-        color: var(--primary-5);
+        color: var(--site-text--primary-light);
         text-decoration-color: transparent;
     }
 }
 
 .small-title {
-    font-size: var(--step--1);
+    font-size: var(--step-1);
     font-family: var(--font-primary);
     text-transform: uppercase;
-    letter-spacing: 0.2ch;
-    font-weight: 800;
+    letter-spacing: 0.1em;
+    font-weight: 400;
 
     &.eyebrow {
-        color: var(--site-text--primary);
+        color: var(--primary-200);
     }
 }

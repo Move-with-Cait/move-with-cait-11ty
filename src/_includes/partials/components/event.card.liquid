@@ -1,0 +1,10 @@
+<article class="event card | flow" data-tempo="allegro">
+    <a href="{{ event.slug }}" class="frame">
+        {% sanity_image event.image "600,400" %}
+    </a>
+    <h3 class="text-step-3">
+        <a href="{{ event.slug }}">{{ event.title }}</a>
+    </h3>
+    <p class="text-step-0">{{ event.preview }}</p>
+    <div class="tag">Now Enrolling!</div>
+</article>

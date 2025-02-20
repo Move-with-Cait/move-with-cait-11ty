@@ -1,0 +1,14 @@
+{%- layout 'layouts/base.liquid' -%}
+
+{%- block main -%}
+<main class="page {{ data.title | downcase }}" data-layout="index">
+    {% if data.pageHeader %}
+        {% render 'partials/components/page_header.liquid', header: data.pageHeader %}
+    {% endif %}
+    {% if data.title == 'Events' %}
+        {% render 'layouts/events/index.liquid', data: data, collections: collections %}
+    {% elsif data.title == 'Blog' %}
+        {% render 'layouts/posts/index.liquid', data: data, collections: collections %}
+    {% endif %}
+</main>
+{% endblock %}

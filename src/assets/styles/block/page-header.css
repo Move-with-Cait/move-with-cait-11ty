@@ -1,0 +1,15 @@
+.page-header {
+    --wrapper-max-width: var(--wrapper-max-width-slim);
+
+    & header {
+        padding-block-start: var(--space-3xl);
+        padding-block-end: var(--space-2xl);
+        background-color: var(--primary-700);
+    }
+
+    & .frame {
+        border-radius: 4rem var(--rounded-xs);
+        max-width: 750px; /* extract into variable */
+        margin-inline: auto;
+    }
+}

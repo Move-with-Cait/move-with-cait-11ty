@@ -1,0 +1,13 @@
+<section data-module="collectionList">
+    <div class="content-wrapper">
+        {% if module.type.size > 0 %}
+            {% assign type = module.type[0] %}
+            {% render 'partials/components/rays_heading', level: '2', heading: module.heading %}
+            {% if type == 'offerings' %}
+                {% render 'partials/components/offerings_list.liquid', collections: collections %}
+            {% elsif type == 'featuredEvents' %}
+                {% render 'partials/components/home_events_list.liquid', collections: collections %}
+            {% endif %}
+        {% endif %}
+    </div>
+</section>

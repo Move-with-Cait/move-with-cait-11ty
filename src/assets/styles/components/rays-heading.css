@@ -1,0 +1,11 @@
+.rays-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    /* margin-block: var(--space-2xl); */
+
+    & .rays {
+        max-width: 7rem;
+    }
+}

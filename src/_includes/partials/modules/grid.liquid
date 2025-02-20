@@ -1,0 +1,16 @@
+<section data-module="grid">
+    <div class="content-wrapper">
+        {% if module.heading %}
+            {% render 'partials/components/rays_heading.liquid', level: '2', heading: module.heading %}
+        {% endif %}
+        <div class="fluid-grid | space-2xl-top" data-layout="thirds">
+            {% for item in module.items %}
+                <div class="flow" data-tempo="moderato">
+                    <img src="{{ item.image | sanity_url_for_image }}" alt="">
+                    <h3 class="text-step-3 | lowercase">{{ item.heading }}</h3>
+                    <p>{{ item.text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

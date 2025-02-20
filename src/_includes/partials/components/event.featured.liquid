@@ -1,0 +1,24 @@
+<article class="event featured">
+    <a href="{{ event.slug }}" class="frame">
+        {% sanity_image event.image "600,400" %}
+    </a>
+    <div class="text | flow">
+        {% if event.enrolling %}
+            <div class="tag">Now Enrolling!</div>
+        {% endif %}
+        <header>
+            <h3 class="text-step-4">
+                <a href="{{ event.slug }}">{{ event.title }}</a>
+            </h3>
+            <div class="details | cluster">
+                <span>{{ event.details.startDate | format_date }}</span>
+                {% comment %}
+                    <span class="divider">•</span>
+                    <span></span>
+                    <span>${{ event.details.price }}</span>
+                {% endcomment %}
+            </div>
+        </header>
+        <p>{{ event.preview }}</p>
+    </div>
+</article>

@@ -1,8 +1,18 @@
 .rich-text {
     --flow-space: var(--space-m);
 
-    & :is(h2, h3) {
-        --flow-space: var(--space-l);
+    & > :is(h2, h3) {
+        --flow-space: var(--space-xl);
+    }
+
+    & h2 {
+        /* font-size: var(--step-4); */
+        text-transform: lowercase;
+    }
+
+    & h3 {
+        /* font-size: var(--step-3); */
+        text-transform: lowercase;
     }
 
     & ul {
@@ -14,6 +24,19 @@
     }
 
     & :is(ul, ol) {
-        padding-inline-start: var(--space-s);
+        padding-inline-start: var(--space-l);
+
+        & > * + * {
+            margin-block-start: var(--space-xs);
+        }
+    }
+
+    & > img {
+        border-radius: var(--rounded-xs);
+        margin-block: 2rem;
+    }
+
+    & .rays {
+        width: 5rem;
     }
 }

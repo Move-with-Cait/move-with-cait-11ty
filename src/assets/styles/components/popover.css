@@ -1,0 +1,29 @@
+.popover {
+    position: relative;
+
+    & .popover-panel {
+        position: absolute;
+        padding: 0.5rem;
+        z-index: 10;
+        margin-top: 0.75rem;
+        min-width: 14rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: var(--rounded-xs);
+        box-shadow: 0px 4px 12px 0px rgba(37, 122, 126, 0.2);
+        animation: 0.4s popover-in;
+
+        & .nav-link {
+            display: inline-block;
+            border-radius: var(--rounded-xs);
+            padding-block: 0.5rem;
+            text-align: center;
+            width: 100%;
+
+            &:hover {
+                background-color: var(--neutral-100);
+            }
+        }
+    }
+}

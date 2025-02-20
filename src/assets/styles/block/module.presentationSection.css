@@ -1,0 +1,10 @@
+[data-module="presentationSection"] {
+    background-color: var(--primary-50);
+    padding-block: var(--section-spacing);
+
+    & .items {
+        & > * + * {
+            margin-block-start: var(--space-xl);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.toc {
+    background-color: var(--primary-50);
+    border: 1px solid var(--primary-100);
+    padding: var(--space-m);
+    border-radius: var(--rounded-xs);
+
+    &[open] svg {
+        transform: rotate(0deg);
+    }
+
+    & svg {
+        fill: currentColor;
+        transform: rotate(-90deg);
+        transition: transform 0.3s;
+    }
+
+    & .small-title {
+        color: var(--primary-600);
+        font-weight: var(--font-medium-weight);
+    }
+
+    & summary {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-l);
+    }
+
+    & :is(ul) {
+        list-style-type: none;
+    }
+}

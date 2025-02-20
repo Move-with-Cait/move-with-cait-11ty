@@ -1,9 +1,10 @@
 :root {
-    --gutter-spacing: var(--space-m);
+    --gutter-spacing: var(--space-s-m, 1rem);
     --section-spacing: var(--space-3xl);
-    --wrapper-max-width: 1344px;
-    --wrapper-max-width-slim: 992px;
-    --paragraph-measure: 76ch;
+    --wrapper-max-width: 1200px;
+    --wrapper-max-width-slim: 1024px;
+    --paragraph-measure: 67ch;
+    scroll-behavior: smooth;
 }
 
 .content-wrapper {
@@ -125,6 +126,18 @@
     }
 }
 
+.flex-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-l);
+    justify-content: center;
+
+    & > * {
+        flex: 1 1 31%;
+        max-width: 26rem;
+    }
+}
+
 .grid-12 {
     position: relative;
     display: grid;
@@ -148,7 +161,12 @@
         var(--grid-placement, auto-fill),
         minmax(var(--grid-item-min-size, 16rem), 1fr)
     );
-    gap: var(--grid-gutter, var(--space-m-l));
+    gap: var(--grid-gutter, var(--space-l));
+
+    &[data-layout="halves"] {
+        --grid-placement: auto-fit;
+        --grid-item-min-size: clamp(20rem, 48%, 34rem);
+    }
 
     &[data-layout="thirds"] {
         --grid-placement: auto-fit;
@@ -189,6 +207,10 @@
 
     &[data-aspect-ratio="9/7"] {
         --frame-aspect-ratio: 9/7;
+    }
+
+    &[data-aspect-ratio="16/9"] {
+        --frame-aspect-ratio: 16/9;
     }
 }
 

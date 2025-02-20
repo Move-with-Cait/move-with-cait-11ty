@@ -1,0 +1,5 @@
+.wave {
+    fill: var(--primary-700);
+    width: 100%;
+    position: absolute;
+}

@@ -1,0 +1,16 @@
+<section data-module="presentationSection">
+    <div class="content-wrapper">
+        {% if module.heading %}
+            {% render 'partials/components/rays_heading.liquid', level: '2', heading: module.heading %}
+        {% endif %}
+        <div class="items | space-2xl-top">
+            {% for item in module.items %}
+                {% assign image_position = forloop.index | modulo: 2 %}
+                {% render 'partials/modules/textImageDiptych.liquid',
+                    module: item,
+                    image_position: item.options.imagePosition
+                %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

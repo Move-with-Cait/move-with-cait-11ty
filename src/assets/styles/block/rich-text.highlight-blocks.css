@@ -1,0 +1,25 @@
+.highlight-blocks {
+    margin-block: var(--space-2xl);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-m);
+
+    & .highlight {
+        flex: 300px 1 1;
+        background: color-mix(in srgb, var(--primary-50), transparent 40%);
+        border: 1px solid
+            color-mix(in srgb, var(--primary-200), transparent 60%);
+        border-radius: var(--rounded-sm);
+        padding: var(--space-m);
+
+        & h3 {
+            color: var(--primary-500);
+        }
+
+        & svg {
+            height: 24px;
+            width: fit-content;
+        }
+    }
+}

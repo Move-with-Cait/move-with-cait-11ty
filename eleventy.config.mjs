@@ -4,6 +4,8 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { filters } from "./src/lib/filters/index.js";
 import { shortcodes } from "./src/lib/shortcodes/index.js";
+import { IdAttributePlugin } from "@11ty/eleventy";
+// import { utils } from "./src/lib/utils/index.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 export default function (config) {
@@ -18,16 +20,63 @@ export default function (config) {
 
     /* Plugins */
     config.addPlugin(eleventyNavigationPlugin);
-    config.addPlugin(eleventyImageTransformPlugin, {
-        formats: ["webp"],
-        widths: ["auto"],
-        htmlOptions: {
-            imgAttributes: {
-                alt: "",
-                loading: "lazy",
-                decoding: "async",
-            },
-        },
+    config.addPlugin(IdAttributePlugin, {
+        checkDuplicates: false,
+    });
+    // config.addPlugin(eleventyImageTransformPlugin, {
+    //     formats: ["webp"],
+    //     widths: ["auto"],
+    //     htmlOptions: {
+    //         imgAttributes: {
+    //             alt: "",
+    //             loading: "lazy",
+    //             decoding: "async",
+    //         },
+    //     },
+    // });
+
+    /* Custom Collections */
+    config.addCollection("offerings", function (collectionsApi) {
+        const all_pages = collectionsApi.getFilteredByTag("pages");
+        return all_pages
+            .filter(({ data }) => data.data.layout == "offering")
+            .sort((a, b) => {
+                const aTitle = a.data.data.title;
+                const bTitle = b.data.data.title;
+                if (aTitle < bTitle) {
+                    return -1;
+                }
+                if (aTitle > bTitle) {
+                    return 1;
+                }
+                return 0;
+            });
+    });
+
+    config.addCollection("upcoming_events", function (collectionsApi) {
+        const all_events = collectionsApi.getFilteredByTag("events");
+        return filters.upcoming_dates(
+            all_events,
+            "data.data.details.startDate"
+        );
+    });
+
+    config.addCollection("past_events", function (collectionsApi) {
+        const all_events = collectionsApi.getFilteredByTag("events");
+        const past_dates = filters.past_dates(
+            all_events,
+            "data.data.details.startDate"
+        );
+        return past_dates.filter((event) => !event.data.data.enrolling);
+    });
+
+    config.addCollection("other_enrolling_events", function (collectionsApi) {
+        const all_events = collectionsApi.getFilteredByTag("events");
+        const past_dates = filters.past_dates(
+            all_events,
+            "data.data.details.startDate"
+        );
+        return past_dates.filter((event) => event.data.data.enrolling);
     });
 
     /* Shortcodes */
