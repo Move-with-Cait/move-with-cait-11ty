@@ -16,6 +16,7 @@
 
         & .panes {
             --panes-gap: var(--space-2xl);
+            margin-block-start: var(--space-l);
         }
 
         & .tagline {
@@ -45,6 +46,21 @@
 
         & :is(h2, h3) {
             color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page[data-layout="home"] {
+        & .home-header {
+            & .frame img {
+                position: relative;
+                top: 0;
+            }
+
+            & .text {
+                text-align: center;
+            }
         }
     }
 }

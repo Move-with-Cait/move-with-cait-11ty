@@ -273,23 +273,21 @@
     }
 }
 
-@media screen and (max-width: 832px) {
+@media screen and (max-width: 768px) {
     .panes {
         flex-direction: column;
 
-        &[data-layout="normal"] {
+        &[data-composition="diptych"][data-layout="flipped"] {
             & > :first-child {
-                order: 2;
+                order: 1;
             }
 
             & > :last-child {
-                order: 1;
+                order: 2;
             }
         }
     }
-}
 
-@media screen and (max-width: 768px) {
     .grid-12 {
         grid-template-columns: 1fr;
 

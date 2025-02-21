@@ -8,3 +8,11 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    [data-module="presentationSection"] {
+        & .items > * + * {
+            margin-block-start: var(--space-3xl);
+        }
+    }
+}

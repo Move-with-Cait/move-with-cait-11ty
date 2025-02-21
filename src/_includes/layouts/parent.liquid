@@ -1,7 +1,7 @@
 {%- layout 'layouts/base.liquid' -%}
 
 {%- block main -%}
-<main class="page" data-layout="parent">
+<main class="page" data-layout="parent" data-page-id="{{ data._id }}">
     <h1>{{ data.title }}</h1>
 </main>
 {% endblock %}

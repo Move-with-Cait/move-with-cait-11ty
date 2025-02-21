@@ -10,7 +10,15 @@
         & ul:not(.popover-panel) {
             display: flex;
             align-items: center;
-            gap: var(--space-m);
+            column-gap: var(--space-m);
+            row-gap: var(--space-xs);
+            flex-wrap: wrap;
         }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .site-header {
+        padding-inline: var(--space-m);
     }
 }

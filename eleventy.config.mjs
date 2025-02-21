@@ -2,6 +2,7 @@
 
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import sitemap_plugin from "@quasibit/eleventy-plugin-sitemap";
 import { filters } from "./src/lib/filters/index.js";
 import { shortcodes } from "./src/lib/shortcodes/index.js";
 import { IdAttributePlugin } from "@11ty/eleventy";
@@ -22,6 +23,11 @@ export default function (config) {
     config.addPlugin(eleventyNavigationPlugin);
     config.addPlugin(IdAttributePlugin, {
         checkDuplicates: false,
+    });
+    config.addPlugin(sitemap_plugin, {
+        sitemap: {
+            hostname: "https://movewithcait.com",
+        },
     });
     // config.addPlugin(eleventyImageTransformPlugin, {
     //     formats: ["webp"],

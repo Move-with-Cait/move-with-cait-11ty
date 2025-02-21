@@ -1,13 +1,15 @@
 {%- layout 'layouts/base.liquid' -%}
 
 {%- block main -%}
-<main class="page {{ data.title | downcase }}" data-layout="index">
+<main class="page {{ data.title | downcase }}" data-layout="index" data-page-id="{{ data._id }}">
     {% if data.pageHeader %}
         {% render 'partials/components/page_header.liquid', header: data.pageHeader %}
     {% endif %}
-    {% if data.title == 'Events' %}
+    {% if data._id == '08c36d0a-f41b-43f1-a85e-297ac59ac866' %}
+        {% comment %} Events Index {% endcomment %}
         {% render 'layouts/events/index.liquid', data: data, collections: collections %}
-    {% elsif data.title == 'Blog' %}
+    {% elsif data._id == '15682f14-c16a-4048-974f-f9ac6b2a0bff' %}
+        {% comment %} Events Index {% endcomment %}
         {% render 'layouts/posts/index.liquid', data: data, collections: collections %}
     {% endif %}
 </main>

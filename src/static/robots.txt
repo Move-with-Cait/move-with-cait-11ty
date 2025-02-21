@@ -9,3 +9,5 @@ User-agent: cohere-ai
 User-agent: Applebot-Extended
 User-agent: PerplexityBot
 Disallow: /
+
+Sitemap: https://movewithcait.com/sitemap-index.xml

@@ -1,7 +1,7 @@
 {%- layout 'layouts/base.liquid' -%}
 
 {%- block main -%}
-<main class="page {{ data.title | slugify }}" data-layout="home">
+<main class="page {{ data.title | slugify }}" data-layout="home" data-page-id="{{ data._id }}">
     <div class="home-header">
         <div class="content-wrapper">
             <header>

@@ -26,3 +26,18 @@
         margin-block-start: 0;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .page:is(
+            [data-page-id="7fd6b10f-e984-43b0-9ac7-1b430483585e"],
+            [data-page-id="eee8314b-380d-42f1-bde1-6668a0f8c3ed"],
+            [data-layout="offering"]
+        ) {
+        & .rich-text {
+            & > :is(h2, h3, p, ul, ol, img, .toc) {
+                max-width: 100%;
+                margin-inline: auto;
+            }
+        }
+    }
+}

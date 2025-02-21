@@ -1,0 +1,71 @@
+[build]
+    command = "npm run build"
+    publish = "_site"
+
+[[redirects]]
+    from = "/offerings/tctsy"
+    to = "/resources"
+
+[[redirects]]
+    from = "/offerings/moving-dialogue"
+    to = "/resources"
+
+[[redirects]]
+    from = "/offerings"
+    to = "/offerings/online-yoga"
+
+[[redirects]]
+    from = "/scheduling"
+    to = "/about"
+
+[[redirects]]
+    from = "/events/2024-01-03-online-trauma-sensitive-yoga-class"
+    to = "/events/online-trauma-sensitive-yoga-class"
+
+[[redirects]]
+    from = "/events/2024-01-28-reconnect-inviting-embodiment-together"
+    to = "/events/reconnect-inviting-embodiment-together"
+
+[[redirects]]
+    from = "/events/2024-03-06-spring-2024-online-tctsy-series"
+    to = "/events/spring-2024-online-tctsy-series"
+
+[[redirects]]
+    from = "/events/2024-05-04-align-workshop"
+    to = "/events/align-workshop"
+
+[[redirects]]
+    from = "/events/2024-05-11-embodied-agency-liberating-our-choices"
+    to = "/events/embodied-agency-liberating-our-choices"
+
+[[redirects]]
+    from = "/events/2024-08-09-trauma-sensitive-yoga-with-good-mother"
+    to = "/events/trauma-sensitive-yoga-with-good-mother"
+
+[[redirects]]
+    from = "/events/2024-09-09-fall-2024-8-week-trauma-sensitive-yoga-group"
+    to = "/events/fall-2024-8-week-trauma-sensitive-yoga-group"
+
+[[redirects]]
+    from = "/events/2024-09-28-wisdom-of-the-body"
+    to = "/events/wisdom-of-the-body"
+
+[[redirects]]
+    from = "/events/2024-10-03-community-yoga-ongoing"
+    to = "/events/community-yoga-ongoing"
+
+[[redirects]]
+    from = "/events/2024-10-16-mindful-movements"
+    to = "/events/mindful-movements"
+
+[[redirects]]
+    from = "/events/2024-11-22-november-mindfulness-walk"
+    to = "/events/november-mindfulness-walk"
+
+[[redirects]]
+    from = "/events/2025-02-17-winter25-healing-with-yoga"
+    to = "/events/winter25-healing-with-yoga"
+
+[[redirects]]
+    from = "/events/2025-02-19-mindful-movements2"
+    to = "/events/mindful-movements2"
