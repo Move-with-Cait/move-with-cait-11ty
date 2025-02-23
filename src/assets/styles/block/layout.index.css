@@ -9,3 +9,13 @@
 /* .page.events[data-layout="index"] {
     
 } */
+
+@media screen and (max-width: 768px) {
+    .page[data-layout="index"] {
+        & .items {
+            & > * {
+                margin-inline: auto;
+            }
+        }
+    }
+}

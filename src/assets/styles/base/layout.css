@@ -295,4 +295,13 @@
             grid-column: span 1;
         }
     }
+
+    .flex-items {
+        gap: var(--space-2xl);
+
+        & > * {
+            flex-basis: auto;
+            max-width: 32rem;
+        }
+    }
 }

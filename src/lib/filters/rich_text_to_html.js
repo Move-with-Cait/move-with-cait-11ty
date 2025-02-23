@@ -186,9 +186,9 @@ export const rich_text_to_html = (rich_text) => {
                 }
 
                 if (uriLooksSafe(url)) {
-                    return html`<a href="${url}" target="${target}"
-                        >${html`${children}`}</a
-                    >`;
+                    // console.log(children);
+                    /* WARN: using html tag here escapes other embedded tags on the link like <em>, remove for now */
+                    return `<a href="${url}" target="${target}">${`${children}`}</a>`;
                 }
 
                 // If the URI appears unsafe, render the children (eg, text) without the link

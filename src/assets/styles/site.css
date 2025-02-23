@@ -17,6 +17,7 @@
 @import "components/button-link.css" layer(main);
 @import "components/nav-link.css" layer(main);
 @import "components/footer-link.css" layer(main);
+@import "components/logo-link.css" layer(main);
 @import "components/notice.css" layer(main);
 @import "components/offering-preview.css" layer(main);
 @import "components/popover.css" layer(main);

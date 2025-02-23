@@ -70,3 +70,32 @@
         margin-block: 0;
     }
 }
+
+@media screen and (max-width: 999px) {
+    .event.featured {
+        & .frame {
+            flex-basis: 20rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .event.featured {
+        flex-direction: column;
+        max-width: 32rem;
+        gap: var(--space-m);
+
+        & .frame {
+            flex-basis: auto;
+        }
+    }
+
+    .event.card {
+        padding: var(--space-xs);
+
+        & .tag {
+            top: calc(0.5rem + var(--space-xs));
+            right: calc(0.5rem + var(--space-xs));
+        }
+    }
+}
