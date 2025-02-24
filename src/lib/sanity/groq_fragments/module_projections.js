@@ -18,6 +18,9 @@ export const RICH_TEXT_PROJECTION = groq`_type == "richContent" => {
                 "logo": logo.asset->
             }
         },
+        _type == "linkGroup" => {
+            links[] ${LINK_PROJECTION}
+        },
         _type == "toc" => {
             addToc,
             "toc": ^.blocks[] {

@@ -7,6 +7,7 @@ import {
     escapeHTML,
     defaultComponents,
 } from "@portabletext/to-html";
+import { sanity_link } from "../shortcodes/sanity/sanity_link.js";
 import { sanity_url_for_image } from "./sanity_url_for_image.js";
 
 const html = htm.bind(vhtml);
@@ -139,6 +140,13 @@ export const rich_text_to_html = (rich_text) => {
                         </details>`;
                     }
                 }
+            },
+            linkGroup: ({ value }) => {
+                return `<div class="link-group | cluster">
+                    ${value.links.map((link) =>
+                        sanity_link(link, "button-link", "data-style='primary'")
+                    )}
+                </div>`;
             },
             image: ({ value }) => {
                 const width = value.width || 900;
