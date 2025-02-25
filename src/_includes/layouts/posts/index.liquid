@@ -1,1 +1,16 @@
-<div class="section-spacing text-center" style="margin-top: 10rem;">Coming soon!</div>
+<div class="section-spacing">
+    <div class="content-wrapper slim">
+        {% for item in collections.posts %}
+            {% assign post = item.data.data %}
+            <article class="post preview">
+                <div class="date">{{ post.displayDate | format_date }}</div>
+                <div class="text | flow" data-tempo="moderato">
+                    <h2 class="text-step-4">
+                        <a href="{{ post.slug }}">{{ post.title }}</a>
+                    </h2>
+                    <p>{{ post.preview }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</div>

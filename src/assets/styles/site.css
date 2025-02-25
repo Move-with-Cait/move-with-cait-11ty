@@ -23,6 +23,7 @@
 @import "components/offering-preview.css" layer(main);
 @import "components/popover.css" layer(main);
 @import "components/rays-heading.css" layer(main);
+@import "components/share_link.css" layer(main);
 @import "components/tag.css" layer(main);
 @import "components/tagline.css" layer(main);
 @import "components/toc.css" layer(main);
@@ -45,6 +46,7 @@
 @import "block/layout.home.css" layer(main);
 @import "block/page.css" layer(main);
 @import "block/event.css" layer(main);
+@import "block/post.css" layer(main);
 @import "block/rich-text.pricing-blocks.css" layer(main);
 @import "block/rich-text.highlight-blocks.css" layer(main);
 @import "block/rich-text.logo-cloud.css" layer(main);

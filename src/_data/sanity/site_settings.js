@@ -11,10 +11,11 @@ const SITE_SETTINGS_QUERY = groq`*[_type == "siteSettings"][0] {
         ...,
         asset->
     },
-    profileImage {
+    "profile_image": profileImage {
         ...,
         asset->
     },
+    "profile_name": profileName,
     socialLinks[] {
         url,
         text,
@@ -33,6 +34,12 @@ export default async function () {
         .height(630)
         .url();
 
+    const avatar_link = image_builder
+        .image(data.profile_image)
+        .width(300)
+        .height(300)
+        .url();
+
     const image_metadata = await Image(image_link, {
         widths: [1200],
         formats: ["jpeg"],
@@ -42,8 +49,19 @@ export default async function () {
 
     const image_data = image_metadata.jpeg[0];
 
+    const avatar_metadata = await Image(avatar_link, {
+        widths: [300],
+        formats: ["webp"],
+        outputDir: "./_site/img/",
+        urlPath: "/img/",
+    });
+
+    const avatar_data = avatar_metadata.webp[0];
+
     return {
         default_og_image: data.domain + image_data.url,
+        avatar: avatar_data.url,
+        profile_name: data.profile_name,
         title: data.title,
         description: data.description,
         domain: data.domain,

@@ -1,0 +1,39 @@
+{%- layout 'layouts/base.liquid' -%}
+
+{%- block main -%}
+<main class="page" data-layout="posts_show" data-id="{{ data._id }}">
+    <div class="content-wrapper | with-sidebar | space-2xl-top section-spacing-bottom">
+        <div class="main-panel">
+            <header class="flow">
+                <a href="/blog">All Posts</a>
+                <h1 class="text-step-5">{{ data.title }}</h1>
+                <p class="lede | text-step-2">{{ data.lede }}</p>
+            </header>
+            {% if data.image %}
+                {% sanity_image data.image "1200,675" "eager" true "featured-image,space-l-top" %}
+            {% endif %}
+            <div class="rich-text | flow | space-xl-top">
+                {{ data.richContent.blocks | rich_text_to_html }}
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="author cluster">
+                <div class="frame" data-aspect-ratio="1/1">
+                    <img
+                        src="{{ sanity.site_settings.avatar }}"
+                        width="300"
+                        height="300"
+                        alt="{{ sanity.site_settings.profile_name }}"
+                    >
+                </div>
+                <div>{{ sanity.site_settings.profile_name }}</div>
+            </div>
+            <div class="space-m-top">Published {{ data.displayDate | format_date }}</div>
+            <div class="space-l-top">
+                {% assign share_url = sanity.site_settings.domain | append: page.url %}
+                {% render 'partials/components/share_link.liquid', title: data.title, url: share_url %}
+            </div>
+        </div>
+    </div>
+</main>
+{%- endblock -%}

@@ -1,12 +1,12 @@
 .page[data-layout$="show"] {
+    --sidebar-gap: var(--space-xl);
+
     & .featured-image {
         border-radius: var(--rounded-sm);
     }
 }
 
 .page[data-layout="events_show"] {
-    --sidebar-gap: var(--space-xl);
-
     & .details-wrapper {
         position: relative;
         place-self: flex-start;
@@ -41,5 +41,25 @@
         color: white;
         font-family: var(--font-heading);
         font-size: var(--step-3);
+    }
+}
+
+.page[data-layout="posts_show"] {
+    --sidebar-min-width: 20rem;
+
+    & .lede {
+        font-style: italic;
+    }
+
+    & .sidebar {
+        & .author {
+            /* font-size: var(--step-0); */
+            font-weight: var(--font-medium-weight);
+
+            & .frame {
+                width: 4rem;
+                border-radius: 999px;
+            }
+        }
     }
 }

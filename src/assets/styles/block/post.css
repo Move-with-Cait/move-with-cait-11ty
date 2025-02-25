@@ -1,0 +1,34 @@
+.post.preview {
+    position: relative;
+    display: flex;
+    gap: var(--space-xl);
+    background-color: white;
+    border-radius: var(--rounded-md);
+    box-shadow: var(--shadow-none);
+    padding-block: var(--space-2xl);
+    padding-inline: var(--space-l);
+    transition: all 0.4s;
+
+    &:hover {
+        box-shadow: var(--shadow-large);
+    }
+
+    & .date {
+        position: relative;
+        top: 0.75rem;
+        flex: 1 0 10rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .post.preview {
+        flex-direction: column;
+        gap: var(--space-l);
+        padding-block: var(--space-m);
+        padding-inline: var(--space-s);
+
+        & .date {
+            flex-basis: auto;
+        }
+    }
+}

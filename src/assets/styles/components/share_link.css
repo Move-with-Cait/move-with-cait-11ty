@@ -1,0 +1,22 @@
+.share-link {
+    & .small-title {
+        color: var(--primary-500);
+    }
+
+    & .button-link {
+        font-weight: var(--font-medium-weight);
+    }
+
+    & .context-alert {
+        position: absolute;
+        inset: auto 0 calc(100% + 0.5rem) 0;
+        padding: 0.25rem;
+        background-color: var(--primary-100);
+        color: var(--primary-700);
+        font-size: var(--step--1);
+        text-align: center;
+        border-radius: var(--rounded-xs);
+        /* transition: all 0.2s ease-in-out; */
+        animation: context-alert-in 0.2s ease-in-out;
+    }
+}

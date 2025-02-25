@@ -1,0 +1,116 @@
+<div
+    x-data="
+        {
+            webShareSupported: undefined,
+            clipboardSupported: undefined,
+            shareFeedback: '',
+            copyFeedback: '',
+            title: '{{ title }}',
+            url: '{{ url }}',
+            init() {
+                this.webShareSupported = window.navigator.share ? true : false;
+                this.clipboardSupported = window.navigator.clipboard ? true : false;
+            },
+            async shareLink() {
+                const title = this.title;
+                const url = this.url;
+                window.navigator.share({
+                    title,
+                    url,
+                    text: title
+                }).then(() => {
+                    console.log('sharing', url);
+                    this.shareFeedback = 'Link shared!';
+                    setTimeout(() => {
+                        this.shareFeedback = '';
+                    }, 3000);
+                }).catch((err) => console.error('Error sharing', err));
+            },
+            async copyLink() {
+                const url = this.url;
+                window.navigator.clipboard.writeText(url).then(() => {
+                    console.log('copied', url);
+                    this.copyFeedback = 'Link copied!';
+                    setTimeout(() => {
+                        this.copyFeedback = '';
+                    }, 3000);
+                }).catch((err) => console.error('Error copying', err));
+            }
+        }
+    "
+    id="share"
+    class="share-link | flow"
+    data-tempo="presto"
+>
+    <div class="small-title">Share</div>
+    <div class="buttons | cluster">
+        <template x-if="webShareSupported">
+            <div class="relative">
+                <button
+                    class="button-link with-icon"
+                    data-style="primary"
+                    data-size="small"
+                    x-on:click="shareLink"
+                    type="button"
+                >
+                    <!-- Feather icons share-2 -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                    </svg>
+                    <span>Share</span>
+                </button>
+                <p
+                    class="context-alert"
+                    role="alert"
+                    aria-live="polite"
+                    x-text="shareFeedback"
+                    x-show="shareFeedback"
+                ></p>
+            </div>
+        </template>
+        <template x-if="clipboardSupported">
+            <div class="relative">
+                <button
+                    class="button-link with-icon"
+                    data-style="primary"
+                    data-size="small"
+                    x-on:click="copyLink"
+                    type="button"
+                >
+                    <!-- Feather icons copy -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span>Copy Link</span>
+                </button>
+                <p
+                    class="context-alert"
+                    role="alert"
+                    aria-live="polite"
+                    x-text="copyFeedback"
+                    x-show="copyFeedback"
+                ></p>
+            </div>
+        </template>
+    </div>
+</div>
