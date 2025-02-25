@@ -15,6 +15,7 @@ const POSTS_QUERY = groq`*[_type == "post"] | order(displayDate desc) {
         ...,
         asset->
     },
+    displayDate,
     preview,
     lede,
     richContent {
