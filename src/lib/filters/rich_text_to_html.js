@@ -73,6 +73,11 @@ export const rich_text_to_html = (rich_text) => {
                     )}
                 </div>`;
             },
+            code: ({ value }) => {
+                if (value.language == "html") {
+                    return html`${value.code}`;
+                }
+            },
             toc: ({ value }) => {
                 // console.log("toc", value);
                 if (value.addToc) {

@@ -4,9 +4,11 @@
     flex-wrap: wrap;
     gap: var(--space-m);
     justify-content: center;
+    max-width: var(--rich-text-slim);
+    margin-inline: auto;
 
     & .pricing-block {
-        flex: 300px 0 1;
+        flex: 236px 0 1;
         text-align: center;
         /* color: var(--color-accent-1-400); */
         background: color-mix(in srgb, var(--accent-1-400), white 95%);

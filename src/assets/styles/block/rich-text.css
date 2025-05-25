@@ -39,6 +39,10 @@
     & .rays {
         width: 5rem;
     }
+
+    & .calendly-inline-widget {
+        border: 1px solid var(--site-border);
+    }
 }
 
 /* @media screen and (max-width: 768px) {

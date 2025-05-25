@@ -27,6 +27,18 @@
     }
 }
 
+/* Enlarge cta button on online yoga page */
+.page[data-page-id="074fd429-3bff-4d22-b4b5-78aa0a6c384a"] {
+    & [data-module="presentationSection"] {
+        & [data-module="textImageDiptych"] {
+            & .button-link {
+                font-size: var(--step-1);
+                --button-bg: var(--primary-700);
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .page:is(
             [data-page-id="7fd6b10f-e984-43b0-9ac7-1b430483585e"],

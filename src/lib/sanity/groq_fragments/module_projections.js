@@ -103,3 +103,12 @@ export const CTA_PROJECTION = groq`_type == "cta" => {
         []
     )
 }`;
+
+export const TWO_COLUMNS_PROJECTION = groq`_type == "twoColumns" => {
+    leftColumn {
+        ${RICH_TEXT_PROJECTION}
+    },
+    rightColumn {
+        ${RICH_TEXT_PROJECTION}
+    }
+}`;

@@ -1,0 +1,15 @@
+[data-module="twoColumns"] {
+    --panes-gap: var(--space-xl);
+    --panes-align: flex-start;
+
+    & .pricing-blocks {
+        margin-inline: 0;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    & :is(.left-col, .right-col):has(.calendly-inline-widget) {
+        width: 100%;
+    }
+}

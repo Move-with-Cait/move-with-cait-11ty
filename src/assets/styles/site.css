@@ -39,6 +39,7 @@
 @import "block/module.callout.css" layer(main);
 @import "block/module.cta.css" layer(main);
 @import "block/module.richContent.css" layer(main);
+@import "block/module.twoColumns.css" layer(main);
 /* @import "block/layout.offering.css" layer(main); */
 @import "block/layout.show.css" layer(main);
 @import "block/layout.index.css" layer(main);

@@ -1,0 +1,12 @@
+<div data-module="twoColumns">
+    <div class="content-wrapper">
+        <div class="panes" data-composition="diptych">
+            <div class="left-col rich-text | flow">
+                {{ module.leftColumn.blocks | rich_text_to_html }}
+            </div>
+            <div class="right-col rich-text | flow">
+                {{ module.rightColumn.blocks | rich_text_to_html }}
+            </div>
+        </div>
+    </div>
+</div>
