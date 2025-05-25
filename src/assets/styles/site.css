@@ -1,4 +1,4 @@
-@layer reset, theme, composition, main, utilities;
+@layer reset, theme, composition, main, utilities, exception;
 
 /*** Reset */
 @import "base/reset.css" layer(reset);
@@ -55,3 +55,5 @@
 /*** Utilities */
 @import "base/utilities.css" layer(utilities);
 @import "base/animations.css" layer(utilities);
+/*** Exception */
+@import "base/exception.css" layer(exception);
