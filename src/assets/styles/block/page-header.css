@@ -12,4 +12,16 @@
         max-width: 750px; /* extract into variable */
         margin-inline: auto;
     }
+
+    & .preview {
+        color: var(--primary-200);
+        margin-block-start: var(--space-l);
+        max-width: 600px;
+        margin-inline: auto;
+    }
+
+    & .cta-links {
+        --cluster-justify: center;
+        margin-block-start: var(--space-l);
+    }
 }

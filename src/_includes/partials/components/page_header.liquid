@@ -8,6 +8,18 @@
                         {{- header.tagline | rich_text_to_html -}}
                     </div>
                 {% endif %}
+                {% if header.preview %}
+                    <div class="preview">
+                        {{- header.preview | rich_text_to_html -}}
+                    </div>
+                {% endif %}
+                {% if header.cta.size > 0 %}
+                    <div class="cta-links | cluster">
+                        {% for cta_link in header.cta %}
+                            {% sanity_link cta_link "button-link" "data-style='white'" %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
         </header>
         {% render 'partials/svg/header_wave.liquid' %}
