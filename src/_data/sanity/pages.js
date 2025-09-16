@@ -12,6 +12,7 @@ import {
     CALLOUT_PROJECTION,
     COLLECTION_LIST_PROJECTION,
     CTA_PROJECTION,
+    CTA_TWO_COLUMNS_PROJECTION,
     TWO_COLUMNS_PROJECTION,
 } from "../../lib/sanity/groq_fragments/module_projections.js";
 
@@ -34,6 +35,7 @@ const PAGES_QUERY = groq`*[_type == "page"] {
             ${CALLOUT_PROJECTION},
             ${COLLECTION_LIST_PROJECTION},
             ${CTA_PROJECTION},
+            ${CTA_TWO_COLUMNS_PROJECTION},
             ${TWO_COLUMNS_PROJECTION}
         },
         []

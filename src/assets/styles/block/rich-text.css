@@ -43,6 +43,10 @@
     & .calendly-inline-widget {
         border: 1px solid var(--site-border);
     }
+
+    & .pricing-blocks {
+        --flow-space: var(--space-l);
+    }
 }
 
 /* @media screen and (max-width: 768px) {

@@ -5,7 +5,7 @@ import {
 } from "./common_projections.js";
 
 export const RICH_TEXT_PROJECTION = groq`_type == "richContent" => {
-    blocks[] {
+    "blocks": coalesce(blocks[] {
         ...,
         _type == "image" => {
             ...,
@@ -34,7 +34,7 @@ export const RICH_TEXT_PROJECTION = groq`_type == "richContent" => {
             ...,
             _type == "richTextLink" => ${LINK_PROJECTION}
         }
-    }
+    }, [])
 }`;
 
 export const GRID_PROJECTION = groq`_type == "grid" => {
@@ -94,6 +94,8 @@ export const COLLECTION_LIST_PROJECTION = groq`_type == "collectionList" => {
 export const CTA_PROJECTION = groq`_type == "cta" => {
     heading,
     text,
+    useCustomCode,
+    code,
     image {
         ...,
         asset->
@@ -110,5 +112,16 @@ export const TWO_COLUMNS_PROJECTION = groq`_type == "twoColumns" => {
     },
     rightColumn {
         ${RICH_TEXT_PROJECTION}
+    }
+}`;
+
+export const CTA_TWO_COLUMNS_PROJECTION = groq`_type == "ctaTwoColumns" => {
+    heading,
+    twoColumns {
+        ${TWO_COLUMNS_PROJECTION}
+    },
+    image {
+        ...,
+        asset->
     }
 }`;

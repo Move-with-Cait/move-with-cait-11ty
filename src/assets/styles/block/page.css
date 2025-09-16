@@ -11,7 +11,7 @@
         }
     }
 
-    & .sections:not(:has([data-module="cta"])) {
+    & .sections:not(:has([data-module="cta"], [data-module="ctaTwoColumns"])) {
         margin-block-end: var(--section-spacing);
     }
 

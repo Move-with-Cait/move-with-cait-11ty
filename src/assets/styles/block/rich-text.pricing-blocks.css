@@ -1,5 +1,5 @@
 .pricing-blocks {
-    margin-block: var(--space-2xl);
+    /* margin-block: var(--space-2xl); */
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-m);

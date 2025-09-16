@@ -1,9 +1,11 @@
-[data-module="cta"] {
+[data-module="ctaTwoColumns"] {
+    --panes-gap: var(--space-xl);
+    --panes-align: flex-start;
     padding-block: calc(var(--section-spacing) * 2);
     color: white;
 
     & .text {
-        max-width: 600px;
+        max-width: 45rem;
         margin-inline: auto;
     }
 }

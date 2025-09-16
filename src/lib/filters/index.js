@@ -4,6 +4,7 @@ import { past_dates } from "./dates/past_dates.js";
 import { upcoming_dates } from "./dates/upcoming_dates.js";
 import { sanity_url_for_image } from "./sanity_url_for_image.js";
 import { rich_text_to_html } from "./rich_text_to_html.js";
+import { render_code_block } from "./render_code_block.js";
 
 export const filters = {
     format_date,
@@ -12,4 +13,5 @@ export const filters = {
     upcoming_dates,
     sanity_url_for_image,
     rich_text_to_html,
+    render_code_block,
 };

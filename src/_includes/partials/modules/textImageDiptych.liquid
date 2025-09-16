@@ -9,7 +9,7 @@
         {% sanity_image module.image "1000,1142" %}
     </div>
     <div class="text | flow" data-tempo="moderato">
-        <h3 class="lowercase">{{ module.heading }}</h3>
+        <h2 class="lowercase">{{ module.heading }}</h2>
         <div class="rich-text flow">{{ module.preview | rich_text_to_html }}</div>
         {% if module.cta.size > 0 %}
             {% assign cta_link = module.cta[0] %}

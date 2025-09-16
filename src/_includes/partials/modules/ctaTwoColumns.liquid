@@ -1,0 +1,20 @@
+<section class="with-bg-image" data-module="ctaTwoColumns">
+    <div class="content-wrapper">
+        <div class="text | text-center | flow" data-tempo="moderato">
+            <h2 class="text-white lowercase">{{ module.heading }}</h2>
+            <div class="panes" data-composition="diptych">
+                {% if module.twoColumns.leftColumn.blocks.size > 0 %}
+                    <div class="left-col rich-text | flow">
+                        {{ module.twoColumns.leftColumn.blocks | rich_text_to_html }}
+                    </div>
+                {% endif %}
+                {% if module.twoColumns.rightColumn.blocks.size > 0 %}
+                    <div class="left-col rich-text | flow">
+                        {{ module.twoColumns.rightColumn.blocks | rich_text_to_html }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% sanity_image module.image "1200,675" "lazy" true "bg-image" %}
+</section>
