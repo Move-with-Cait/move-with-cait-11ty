@@ -5,7 +5,7 @@
         [data-layout="offering"]
     ) {
     & .rich-text {
-        & > :is(h2, h3, p, ul, ol, img, .toc) {
+        & > :is(h2, h3, p, ul, ol, img, .toc, iframe) {
             max-width: var(--rich-text-slim);
             margin-inline: auto;
         }

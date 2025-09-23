@@ -106,7 +106,7 @@ export const CTA_PROJECTION = groq`_type == "cta" => {
     )
 }`;
 
-export const TWO_COLUMNS_PROJECTION = groq`_type == "twoColumns" => {
+export const TWO_COLUMNS_PROJECTION = groq`_type == "twoColumns" && published != false => {
     leftColumn {
         ${RICH_TEXT_PROJECTION}
     },
